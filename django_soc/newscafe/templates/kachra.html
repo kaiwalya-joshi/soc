@@ -1,0 +1,207 @@
+<form method="get" action="{% url 'search' %}">
+    <div>
+        <input type="text" name="search" value="search" style="width: 1259px;height: 30px;">
+        <input type="submit" value="Search Any General News">
+    </div>
+    
+</form>
+<form method="get">
+    <header> 
+    
+        <nav>
+            <label  class="navigationbar">
+                Search News By Category:
+            </label>
+            
+
+            <ul>
+                
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">General</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Business</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Entertainment</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Science</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Technology</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Sports</a></li>
+                <li><a href="{% url 'home' %}" name="category" value="category" id="category">Health</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
+</form>
+
+<form action="" method="get">
+    <div> 
+           
+           <td><b>Search News By Category:</b><br>
+           
+               <select style="width:52%;height: 36px;" id="category" name="categroy" value="categroy">
+
+                   <option value="general">General</option>
+                   <option value="business">Business</option>
+                   <option value="entertainment">Entertainment</option>
+                   <option value="science">Science</option>
+                   <option value="technology">Technology</option>
+                   <option value="sports">Sports</option>
+                   <option value="health">Health</option>
+                   
+               </select>
+           </td>
+           <input type="submit" value="Search By Category">
+
+       </div>
+       <br>
+       <br>
+
+       
+   </form>
+
+
+
+<br>
+<br>
+<hr>
+
+<!-- else:
+        api_url = f'https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey={api_key}'
+        response=requests.get(api_url)
+        data_as_json=response.json()  
+        data_articles=data_as_json['articles']
+    
+    dict1={'data_articles': data_articles}
+    return render(request, 'home.html', dict1) -->
+    <form method="get">
+        <div> 
+               
+               <td><b>Search News By Country:</b><br>
+               
+                   <select style="width:52%;height: 36px;" id="country" name="country" value="country">
+   
+                       <option value="in">India</option>
+                       <option value="ae">United Arab Emirates</option>
+                       <option value="ar">Argentina</option>
+                       <option value="at">Austria</option>
+                       <option value="au">Australia</option>
+                       <option value="be">Belgium</option>
+                       <option value="bg">Bulgaria</option>
+                       <option value="br">Brazil</option>
+                       <option value="ca">Canada</option>
+                       <option value="ch">Switzerland</option>
+                       <option value="cn">China</option>
+                       <option value="co">Colombia</option>
+                       <option value="cu">Cuba</option>
+                       <option value="cz">Czech Republic</option>
+                       <option value="de">Germany</option>
+                       <option value="eg">Egypt</option>
+                       <option value="fr">France</option>
+                       <option value="gb">United Kingdom</option>
+                       <option value="gr">Greece</option>
+                       <option value="hk">Hong Kong</option>
+                       <option value="hu">Hungary</option>
+                       <option value="id">Indonesia</option>
+                       <option value="ie">Ireland</option>
+                       <option value="il">Israel</option>
+                       
+                       <option value="it">Italy</option>
+                       <option value="jp">Japan</option>
+                       <option value="kr">South Korea</option>
+                       <option value="lt">Lithuania</option>
+                       <option value="lv">Latvia</option>
+                       <option value="ma">Morocco</option>
+                       <option value="mx">Mexico</option>
+                       <option value="my">Malaysia</option>
+                       <option value="ng">Nigeria</option>
+                       <option value="nl">Netherlands</option>
+                       <option value="no">Norway</option>
+                       <option value="nz">New Zealand</option>
+                       <option value="ph">Philippines</option>
+                       <option value="pl">Poland</option>
+                       <option value="pt">Portugal</option>
+                       <option value="ro">Romania</option>
+                       <option value="rs">Serbia</option>
+                       <option value="ru">Russia</option>
+                       <option value="sa">Saudi Arabia</option>
+                       <option value="se">Sweden</option>
+                       <option value="sg">Singapore</option>
+                       <option value="si">Slovenia</option>
+                       <option value="sk">Slovakia</option>
+                       <option value="th">Thailand</option>
+                       <option value="tr">Turkey</option>
+                       <option value="tw">Taiwan</option>
+                       <option value="ua">Ukraine</option>
+                       <option value="us">United States</option>
+                       <option value="ve">Venezuela</option>
+                       <option value="za">South Africa</option>
+                   </select>
+               </td>
+               <input type="submit" value="Search By Country">
+   
+           </div>
+           <br>
+           <br>
+   
+           
+       </form>
+       <br>
+       <br>
+       <form method="get" action="{% url 'search' %}">
+           <div>
+               <input type="text" name="search" style="width: 1259px;height: 30px;">
+               <input type="submit" value="Search Any General News">
+           </div>
+           
+       </form>
+       <br>
+       <br>
+       <form method="get" action="">
+           <div> 
+                  
+                  <td><b>Search News By Category:</b><br>
+                  
+                      <select style="width:52%;height: 36px;" id="category" name="categroy" value="categroy">
+      
+                          <option value="general">General</option>
+                          <option value="business">Business</option>
+                          <option value="entertainment">Entertainment</option>
+                          <option value="science">Science</option>
+                          <option value="technology">Technology</option>
+                          <option value="sports">Sports</option>
+                          <option value="health">Health</option>
+                          
+                      </select>
+                  </td>
+                  <input type="submit" value="Search By Category">
+      
+              </div>
+              <br>
+              <br>
+      
+              
+          </form>
+
+          <form method="get" action="">
+            <div> 
+                   
+                   <td><b>Search News By Category:</b><br>
+                   
+                       <select style="width:52%;height: 36px;" id="category" name="categroy" value="categroy">
+       
+                           <option value="general">General</option>
+                           <option value="business">Business</option>
+                           <option value="entertainment">Entertainment</option>
+                           <option value="science">Science</option>
+                           <option value="technology">Technology</option>
+                           <option value="sports">Sports</option>
+                           <option value="health">Health</option>
+                           
+                       </select>
+                   </td>
+                   <input type="submit" value="Search By Category">
+       
+               </div>
+               <br>
+               <br>
+               
+       
+               
+           </form>
