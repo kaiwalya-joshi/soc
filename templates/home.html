@@ -1,0 +1,168 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<!-- <p><a href="{% url 'logout' %}">Log Out</a></p> -->
+<button type="submit"><a href="{% url 'logout' %}">Log Out</a></button>
+
+
+<center>
+    <strong style="font-size:20px">
+        &#128512; &#128516; &#128525; &#128151;</strong>
+    <h1>Welcome To Our NewsCafe || Jo Aapko Rakhe Sabse Aage</h1></strong>
+    <strong style="font-size:20px">
+        &#128512; &#128516; &#128525; &#128151;
+    </strong>
+
+</center><br>
+<style>
+    span {
+    font-size: 26px;
+  }
+</style>
+<form method="get">
+    <div>
+
+        
+
+            <select style="width:52%;height: 36px;" id="country" name="country" value="country">
+
+                <option value="in">India</option>
+                <option value="ae">United Arab Emirates</option>
+                <option value="ar">Argentina</option>
+                <option value="at">Austria</option>
+                <option value="au">Australia</option>
+                <option value="be">Belgium</option>
+                <option value="bg">Bulgaria</option>
+                <option value="br">Brazil</option>
+                <option value="ca">Canada</option>
+                <option value="ch">Switzerland</option>
+                <option value="cn">China</option>
+                <option value="co">Colombia</option>
+                <option value="cu">Cuba</option>
+                <option value="cz">Czech Republic</option>
+                <option value="de">Germany</option>
+                <option value="eg">Egypt</option>
+                <option value="fr">France</option>
+                <option value="gb">United Kingdom</option>
+                <option value="gr">Greece</option>
+                <option value="hk">Hong Kong</option>
+                <option value="hu">Hungary</option>
+                <option value="id">Indonesia</option>
+                <option value="ie">Ireland</option>
+                <option value="il">Israel</option>
+
+                <option value="it">Italy</option>
+                <option value="jp">Japan</option>
+                <option value="kr">South Korea</option>
+                <option value="lt">Lithuania</option>
+                <option value="lv">Latvia</option>
+                <option value="ma">Morocco</option>
+                <option value="mx">Mexico</option>
+                <option value="my">Malaysia</option>
+                <option value="ng">Nigeria</option>
+                <option value="nl">Netherlands</option>
+                <option value="no">Norway</option>
+                <option value="nz">New Zealand</option>
+                <option value="ph">Philippines</option>
+                <option value="pl">Poland</option>
+                <option value="pt">Portugal</option>
+                <option value="ro">Romania</option>
+                <option value="rs">Serbia</option>
+                <option value="ru">Russia</option>
+                <option value="sa">Saudi Arabia</option>
+                <option value="se">Sweden</option>
+                <option value="sg">Singapore</option>
+                <option value="si">Slovenia</option>
+                <option value="sk">Slovakia</option>
+                <option value="th">Thailand</option>
+                <option value="tr">Turkey</option>
+                <option value="tw">Taiwan</option>
+                <option value="ua">Ukraine</option>
+                <option value="us">United States</option>
+                <option value="ve">Venezuela</option>
+                <option value="za">South Africa</option>
+            </select>
+        </td>
+        <!-- <input type="submit" value="Search By Country"> -->
+
+        <td><b>Select a Country:</b><br>
+        
+
+            <select style="width:52%;height: 36px;" id="category" name="category" value="category">
+
+                <option value="general">General</option>
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="science">Science</option>
+                <option value="technology">Technology</option>
+                <option value="sports">Sports</option>
+                <option value="health">Health</option>
+
+            </select>
+        </td>
+        <td><b>Select a Category:</b><br><br>
+        <input type="submit" value="Search By Country & Category">
+
+    </div>
+    <br>
+    <br>
+
+
+
+</form>
+<br>
+<br>
+<form method="get" action="{% url 'search' %}">
+    <div>
+        <input type="text" name="search" style="width: 1259px;height: 30px;">
+        <input type="submit" value="Search Any General News">
+    </div>
+
+</form>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<hr>
+<!-- <p> {{ data_articles }} </p> -->
+{% for element in data_articles %}
+<div class="card" , id="card">
+    <img src="{{ element.urlToImage }}" alt="Image Not Found!" width="300px" height="200px">
+
+    <p><strong>Title:</strong> <a href="{{ element.url }}" target="_blank">{{ element.title.upper }}</a></p>
+    <p><strong>Description:</strong> {{ element.description }}</p>
+    <p><strong>Source:</strong> {{ element.source.name }}</p>
+    <p><strong>Author:</strong> {{ element.author }}</p>
+    <small><strong>Published at</strong>: {{ element.publishedAt }}</small>
+    <p><strong>Content:</strong> {{ element.content }}</p>
+    <p><span>&#128077;</span></p>
+    
+    <a href="{{ element.url }}" target="_blank">Read Full News</a>
+   
+</div>
+<hr>
+
+{% endfor %}
+<!-- {% for author, title, description, source, date, url in news  %}
+      <p>Source:{{ source }}</p>
+      <p>Title:{{ title }}</p>
+      <p>Description:{{ description }}</p>
+      <p>Author:{{ author }}</p>
+      <p>Date:{{ date }}</p>
+      <p>Url:{{ url }}</p>
+      
+    {% endfor %} -->
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+</body>
+
+</html>
+{% endblock %}

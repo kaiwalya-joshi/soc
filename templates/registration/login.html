@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class='mt-5 text-white'>
+  <form class='container bg-dark p-5' method = 'POST'>
+    {% csrf_token %}
+
+    <div class="form-outline mb-4">
+        <label class="form-label" name = "username">UserName</label>
+        <input type="email" id="form2Example1" class="form-control" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" fname = "password">Password</label>
+        <input type="password" id="form2Example2" class="form-control" />
+    </div>
+
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-block mb-4 m-3">
+                <a href="../" class='text-decoration-none text-white'>Sign in</a>
+            </button>
+            <button class='btn btn-danger btn-block mb-4 m-3'>
+                <a href="#" class='text-decoration-none text-white'>Forgot password?</a>
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <p>Don't have account? Join us for latest News !!!</p>
+        <button class="btn btn-primary btn-block mb-4 m-3">
+            <a href="signup" class='text-decoration-none text-white'>Sign up</a>
+        </button>
+    </div>
+    </form>
+</div> 
+<!-- <h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form> -->
+{% endblock %}
